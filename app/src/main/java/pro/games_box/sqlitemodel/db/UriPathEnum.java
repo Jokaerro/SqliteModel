@@ -6,7 +6,8 @@ package pro.games_box.sqlitemodel.db;
 
 public enum UriPathEnum {
 
-    MYTABLE(1, "mytable", "mytable", false, MyTableContract.TABLE);
+    MYTABLE(1, "mytable", "mytable", false, MyTableContract.TABLE),
+    MYTABLE_ID(2, "mytable/*", "mytable_id", true, MyTableContract.TABLE);
 
     public int code;
     public String path;

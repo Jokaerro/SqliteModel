@@ -1,5 +1,6 @@
 package pro.games_box.sqlitemodel.db;
 
+import android.net.Uri;
 import android.provider.BaseColumns;
 
 /**
@@ -25,5 +26,13 @@ public class MyTableContract {
                 + TITLE + " TEXT, "
                 + DESCRIPTION + " TEXT, "
                 + LINK + " LINK )";
+    }
+
+    public static Uri buildQuerySymbolUri(String symbol){
+        return MyDatabase.BASE_CONTENT_URI.buildUpon().appendPath(TABLE).appendPath(symbol).build();
+    }
+
+    public static Uri buildBaseUri(){
+        return MyDatabase.BASE_CONTENT_URI.buildUpon().appendPath(TABLE).build();
     }
 }
